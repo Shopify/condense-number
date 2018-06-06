@@ -10,8 +10,8 @@ const symbols: {[key: string]: LocaleSymbols} = {
   latn: {
     group: ',',
     decimal: '.',
-    minusSign: '-'
-  }
+    minusSign: '-',
+  },
 };
 
 interface Format {
@@ -42,12 +42,12 @@ const formats: {[key: string]: Format | null} = {
       patterns: {
         decimal: {
           positivePattern: '{number}',
-          negativePattern: '{minusSign}{number}'
+          negativePattern: '{minusSign}{number}',
         },
         currency: {
           positivePattern: '{currency}{number}',
-          negativePattern: '{minusSign}{currency}{number}'
-        }
+          negativePattern: '{minusSign}{currency}{number}',
+        },
       },
       symbols: 'latn',
       currencies: {
@@ -70,8 +70,8 @@ const formats: {[key: string]: Format | null} = {
         XAF: 'FCFA',
         XCD: 'EC$',
         XOF: 'CFA',
-        XPF: 'CFPF'
-      }
+        XPF: 'CFPF',
+      },
     },
     condensePatterns: {
       '1000-count-one': '0K',
@@ -97,20 +97,20 @@ const formats: {[key: string]: Format | null} = {
       '10000000000000-count-one': '00T',
       '10000000000000-count-other': '00T',
       '100000000000000-count-one': '000T',
-      '100000000000000-count-other': '000T'
-    }
+      '100000000000000-count-other': '000T',
+    },
   },
   de: {
     number: {
       patterns: {
         decimal: {
           positivePattern: '{number}',
-          negativePattern: '{minusSign}{number}'
+          negativePattern: '{minusSign}{number}',
         },
         currency: {
           positivePattern: '{number} {currency}',
-          negativePattern: '{minusSign}{number} {currency}'
-        }
+          negativePattern: '{minusSign}{number} {currency}',
+        },
       },
       symbols: 'latn',
       currencies: {
@@ -138,8 +138,8 @@ const formats: {[key: string]: Format | null} = {
         XAF: 'FCFA',
         XCD: 'EC$',
         XOF: 'CFA',
-        XPF: 'CFPF'
-      }
+        XPF: 'CFPF',
+      },
     },
     condensePatterns: {
       '1000-count-one': '0',
@@ -165,20 +165,20 @@ const formats: {[key: string]: Format | null} = {
       '10000000000000-count-one': "00 Bio'.'",
       '10000000000000-count-other': "00 Bio'.'",
       '100000000000000-count-one': "000 Bio'.'",
-      '100000000000000-count-other': "000 Bio'.'"
-    }
+      '100000000000000-count-other': "000 Bio'.'",
+    },
   },
   pt: {
     number: {
       patterns: {
         decimal: {
           positivePattern: '{number}',
-          negativePattern: '{minusSign}{number}'
+          negativePattern: '{minusSign}{number}',
         },
         currency: {
           positivePattern: '{currency}{number}',
-          negativePattern: '{minusSign}{currency}{number}'
-        }
+          negativePattern: '{minusSign}{currency}{number}',
+        },
       },
       symbols: 'latn',
       currencies: {
@@ -203,8 +203,8 @@ const formats: {[key: string]: Format | null} = {
         XAF: 'FCFA',
         XCD: 'EC$',
         XOF: 'CFA',
-        XPF: 'CFPF'
-      }
+        XPF: 'CFPF',
+      },
     },
     condensePatterns: {
       '1000-count-one': '0 mil',
@@ -230,20 +230,20 @@ const formats: {[key: string]: Format | null} = {
       '10000000000000-count-one': '00 tri',
       '10000000000000-count-other': '00 tri',
       '100000000000000-count-one': '000 tri',
-      '100000000000000-count-other': '000 tri'
-    }
+      '100000000000000-count-other': '000 tri',
+    },
   },
   es: {
     number: {
       patterns: {
         decimal: {
           positivePattern: '{number}',
-          negativePattern: '{minusSign}{number}'
+          negativePattern: '{minusSign}{number}',
         },
         currency: {
           positivePattern: '{number} {currency}',
-          negativePattern: '{minusSign}{number} {currency}'
-        }
+          negativePattern: '{minusSign}{number} {currency}',
+        },
       },
       symbols: 'latn',
       currencies: {
@@ -253,8 +253,8 @@ const formats: {[key: string]: Format | null} = {
         THB: '฿',
         USD: '$',
         VND: '₫',
-        XPF: 'CFPF'
-      }
+        XPF: 'CFPF',
+      },
     },
     condensePatterns: {
       '1000-count-one': '0 mil',
@@ -280,20 +280,20 @@ const formats: {[key: string]: Format | null} = {
       '10000000000000-count-one': '00 B',
       '10000000000000-count-other': '00 B',
       '100000000000000-count-one': '000 B',
-      '100000000000000-count-other': '000 B'
-    }
+      '100000000000000-count-other': '000 B',
+    },
   },
   ja: {
     number: {
       patterns: {
         decimal: {
           positivePattern: '{number}',
-          negativePattern: '{minusSign}{number}'
+          negativePattern: '{minusSign}{number}',
         },
         currency: {
           positivePattern: '{currency}{number}',
-          negativePattern: '{minusSign}{currency}{number}'
-        }
+          negativePattern: '{minusSign}{currency}{number}',
+        },
       },
       symbols: 'latn',
       currencies: {
@@ -317,8 +317,8 @@ const formats: {[key: string]: Format | null} = {
         XAF: 'FCFA',
         XCD: 'EC$',
         XOF: 'CFA',
-        XPF: 'CFPF'
-      }
+        XPF: 'CFPF',
+      },
     },
     condensePatterns: {
       '1000-count-other': '0',
@@ -332,20 +332,20 @@ const formats: {[key: string]: Format | null} = {
       '100000000000-count-other': '0000億',
       '1000000000000-count-other': '0兆',
       '10000000000000-count-other': '00兆',
-      '100000000000000-count-other': '000兆'
-    }
+      '100000000000000-count-other': '000兆',
+    },
   },
   fr: {
     number: {
       patterns: {
         decimal: {
           positivePattern: '{number}',
-          negativePattern: '{minusSign}{number}'
+          negativePattern: '{minusSign}{number}',
         },
         currency: {
           positivePattern: '{number} {currency}',
-          negativePattern: '{minusSign}{number} {currency}'
-        }
+          negativePattern: '{minusSign}{number} {currency}',
+        },
       },
       symbols: 'latn',
       currencies: {
@@ -389,8 +389,8 @@ const formats: {[key: string]: Format | null} = {
         WST: 'WS$',
         XAF: 'FCFA',
         XOF: 'CFA',
-        XPF: 'FCFP'
-      }
+        XPF: 'FCFP',
+      },
     },
     condensePatterns: {
       '1000-count-one': '0 k',
@@ -416,20 +416,20 @@ const formats: {[key: string]: Format | null} = {
       '10000000000000-count-one': '00 Bn',
       '10000000000000-count-other': '00 Bn',
       '100000000000000-count-one': '000 Bn',
-      '100000000000000-count-other': '000 Bn'
-    }
+      '100000000000000-count-other': '000 Bn',
+    },
   },
   it: {
     number: {
       patterns: {
         decimal: {
           positivePattern: '{number}',
-          negativePattern: '{minusSign}{number}'
+          negativePattern: '{minusSign}{number}',
         },
         currency: {
           positivePattern: '{number} {currency}',
-          negativePattern: '{minusSign}{number} {currency}'
-        }
+          negativePattern: '{minusSign}{number} {currency}',
+        },
       },
       symbols: 'latn',
       currencies: {
@@ -447,8 +447,8 @@ const formats: {[key: string]: Format | null} = {
         XAF: 'FCFA',
         XCD: 'EC$',
         XOF: 'CFA',
-        XPF: 'CFPF'
-      }
+        XPF: 'CFPF',
+      },
     },
     condensePatterns: {
       '1000-count-one': '0',
@@ -474,9 +474,9 @@ const formats: {[key: string]: Format | null} = {
       '10000000000000-count-one': '00 Bln',
       '10000000000000-count-other': '00 Bln',
       '100000000000000-count-one': '000 Bln',
-      '100000000000000-count-other': '000 Bln'
-    }
-  }
+      '100000000000000-count-other': '000 Bln',
+    },
+  },
 };
 
 export {symbols, formats};

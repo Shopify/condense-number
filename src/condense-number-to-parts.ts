@@ -11,7 +11,7 @@ interface CondensedNumberParts {
 export function condenseNumberToParts(
   rawValue: number,
   locale: string,
-  precision: number
+  precision: number,
 ): CondensedNumberParts {
   const sign = rawValue < 0 ? '-' : '';
   const value = Math.abs(rawValue);

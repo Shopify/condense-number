@@ -4,12 +4,12 @@ import {condenseNumberToParts} from './condense-number-to-parts';
 export function condenseNumber(
   value: number,
   locale: string,
-  precision: number = 0
+  precision: number = 0,
 ) {
   const {sign, number, abbreviation} = condenseNumberToParts(
     value,
     locale,
-    precision
+    precision,
   );
 
   const localeInfo = formats[locale];

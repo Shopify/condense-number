@@ -5,11 +5,13 @@
   "author": "Shopify <dev@shopify.com>",
   "license": "MIT",
   "scripts": {
+    "format": "prettier --write src/**/*",
     "test": "jest --watch"
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",
     "jest": "^23.1.0",
+    "prettier": "^1.13.4",
     "ts-jest": "^22.4.6",
     "typescript": "^2.9.1"
   },
