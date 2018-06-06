@@ -5,12 +5,12 @@ export function condenseCurrency(
   value: number,
   locale: string,
   currencyCode: string,
-  precision: number = 0
+  precision: number = 0,
 ) {
   const {sign, number, abbreviation} = condenseNumberToParts(
     value,
     locale,
-    precision
+    precision,
   );
 
   const localeInfo = formats[locale];
