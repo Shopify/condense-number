@@ -5,6 +5,10 @@ describe('condenseNumber()', () => {
     expect(condenseNumber(10, 'en')).toBe('10');
   });
 
+  it('does not condense numbers when a language does not support it', () => {
+    expect(condenseNumber(100000, 'it')).toBe('100.000');
+  });
+
   it('condenses large numbers', () => {
     expect(condenseNumber(1500000, 'en')).toBe('1M');
   });
