@@ -5,12 +5,14 @@
   "author": "Shopify <dev@shopify.com>",
   "license": "MIT",
   "scripts": {
+    "build": "microbundle",
     "format": "prettier --write src/**/*",
     "test": "jest --watch"
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",
     "jest": "^23.1.0",
+    "microbundle": "^0.4.4",
     "prettier": "^1.13.4",
     "ts-jest": "^22.4.6",
     "typescript": "^2.9.1"
