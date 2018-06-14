@@ -168,7 +168,7 @@ const formats: {[key: string]: Format | null} = {
       '100000000000000-count-other': "000 Bio'.'",
     },
   },
-  pt: {
+  'pt-BR': {
     number: {
       patterns: {
         decimal: {
