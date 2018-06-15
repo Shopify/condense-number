@@ -24,7 +24,7 @@ Optionally, provide a third parameter, which is a number and overrides the defau
 
 ### condenseCurrency
 
-Produve a number, locale and currency code, get the condensed currency value. If a condensed value isn't applicable, `condenseCurrency` returns the currency with formatting, if appropriate.
+Provide a number, locale and currency code, get the value with the currency provided, formatted according to the locale's standards. If a condensing isn't applicable, `condenseCurrency` returns the currency with formatting, but without condensing.
 
 `condenseCurrency(15000, 'en', 'usd')` = `'$15K'`;
 
