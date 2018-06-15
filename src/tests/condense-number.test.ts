@@ -24,4 +24,12 @@ describe('condenseNumber()', () => {
   it('handles negative numbers properly', () => {
     expect(condenseNumber(-150000, 'ja')).toBe('-15万');
   });
+
+  it('uses Intl formatting when the locale is not supported', () => {
+    expect(condenseNumber(-150000, 'IN')).toBe('-150.000');
+  });
+
+  it('uses applies precision to Intl formatting when the locale is not supported', () => {
+    expect(condenseNumber(-150000, 'IN', 2)).toBe('-150.000,00');
+  });
 });

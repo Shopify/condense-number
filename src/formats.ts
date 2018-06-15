@@ -36,7 +36,21 @@ interface Format {
   };
 }
 
-const formats: {[key: string]: Format | null} = {
+enum SupportedLocale {
+  English = 'en',
+  Dutch = 'de',
+  Portugese = 'pt-BR',
+  Italian = 'it',
+  Spanish = 'es',
+  Japanese = 'ja',
+  French = 'fr',
+}
+
+export function isSupportedLocale(locale: string): locale is SupportedLocale {
+  return Object.values(SupportedLocale).indexOf(locale) !== -1;
+}
+
+const formats: {[key in SupportedLocale]: Format} = {
   en: {
     number: {
       patterns: {

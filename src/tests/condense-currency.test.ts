@@ -18,7 +18,7 @@ describe('condenseCurrency()', () => {
   });
 
   it('adds currency symbol and condenses large numbers in non-English locales and non-USD currencies', () => {
-    expect(condenseCurrency(15000, 'pt', 'JPY')).toBe('JP¥15 mil');
+    expect(condenseCurrency(15000, 'pt-BR', 'JPY')).toBe('JP¥15 mil');
   });
 
   it('condenses numbers to the provided precision', () => {
@@ -27,5 +27,13 @@ describe('condenseCurrency()', () => {
 
   it('handles negative numbers properly', () => {
     expect(condenseCurrency(-15000, 'ja', 'CAD')).toBe('-CA$1万');
+  });
+
+  it('uses Intl formatting when the locale is not supported', () => {
+    expect(condenseCurrency(150000, 'IN', 'USD')).toBe('US$150.000');
+  });
+
+  it('uses applies precision to Intl formatting when the locale is not supported', () => {
+    expect(condenseCurrency(150000, 'IN', 'USD', 2)).toBe('US$150.000,00');
   });
 });
