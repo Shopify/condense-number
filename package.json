@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-shopify": "^22.1.0",
     "jest": "^23.1.0",
     "microbundle": "^0.4.4",
     "prettier": "^1.13.4",
