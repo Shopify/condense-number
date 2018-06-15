@@ -3,8 +3,18 @@ containers:
     docker: circleci/ruby:2.5.1-node-browsers
 
 steps:
-- label: Tests
-  timeout: 5m
+- label: 'Tests 👓'
+  cache:
+    - build/cache/jest
+  dependencies:
+  - yarn
   run:
-  - echo "Hello World"
+    - yarn jest
+  timeout: 5m
 
+- label: 'Lint 💅'
+  dependencies:
+  - yarn
+  run:
+    - yarn eslint . --ext .ts
+  timeout: 5m

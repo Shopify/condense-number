@@ -22,7 +22,7 @@ export function condenseNumberToParts(
   }
 
   const localeInfo = formats[locale];
-  const condenseFormatsForLocale = localeInfo['condensePatterns'];
+  const condenseFormatsForLocale = localeInfo.condensePatterns;
   const condenseFormat = condenseFormatsForLocale[`${base}-count-other`];
 
   if (condenseFormat === '0') {
