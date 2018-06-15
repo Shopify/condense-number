@@ -14,7 +14,7 @@ describe('condenseCurrency()', () => {
   });
 
   it('adds currency symbol and condenses large numbers in non-English locales', () => {
-    expect(condenseCurrency(15000, 'es', 'usd')).toBe('15 mil $');
+    expect(condenseCurrency(15000, 'es', 'usd')).toBe('15 mil US$');
   });
 
   it('adds currency symbol and condenses large numbers in non-English locales and non-USD currencies', () => {
