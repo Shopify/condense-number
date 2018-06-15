@@ -6,7 +6,7 @@ export function condenseCurrency(
   locale: string,
   currencyCode: string,
   precision: number = 0,
-): string {
+) {
   if (!isSupportedLocale(locale)) {
     return new Intl.NumberFormat(locale, {
       style: 'currency',
