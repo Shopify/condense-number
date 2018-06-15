@@ -1,4 +1,4 @@
-import {formats} from './formats';
+import {formats, isSupportedLocale} from './formats';
 import {getBase} from './get-base';
 import {setPrecision} from './set-precision';
 
@@ -17,7 +17,7 @@ export function condenseNumberToParts(
   const value = Math.abs(rawValue);
   const base = getBase(value);
 
-  if (base === 0) {
+  if (base === 0 || !isSupportedLocale(locale)) {
     return {sign, number: value.toLocaleString(locale), abbreviation: ''};
   }
 

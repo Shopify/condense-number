@@ -1,4 +1,4 @@
-import {formats, symbols} from './formats';
+import {formats, symbols, isSupportedLocale} from './formats';
 import {condenseNumberToParts} from './condense-number-to-parts';
 
 export function condenseCurrency(
@@ -6,7 +6,16 @@ export function condenseCurrency(
   locale: string,
   currencyCode: string,
   precision: number = 0,
-) {
+): string {
+  if (!isSupportedLocale(locale)) {
+    return new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency: currencyCode,
+      minimumFractionDigits: precision,
+      maximumFractionDigits: precision,
+    }).format(value);
+  }
+
   const {sign, number, abbreviation} = condenseNumberToParts(
     value,
     locale,
