@@ -38,7 +38,7 @@ interface Format {
 
 enum SupportedLocale {
   English = 'en',
-  Dutch = 'de',
+  German = 'de',
   Portugese = 'pt-BR',
   Italian = 'it',
   Spanish = 'es',

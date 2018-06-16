@@ -4,7 +4,7 @@ Locale-aware number and currency condensing.
 
 `condense-number` uses [Unicode Common Locle Data Repository (CLDR)](http://cldr.unicode.org/) data to inform locale-aware number and currency condensing. What does number condensing mean? In English 50,000 condenses to 50K, but it's 50 mil in Portuguese and 5 万 in Japanese.
 
-The following locales are now available in `condense-number`: English, French, Dutch, Italian, Japanese, Portuguese and Spanish.
+The following locales are now available in `condense-number`: English, French, German, Italian, Japanese, Portuguese and Spanish.
 
 ### How to use
 
