@@ -24,13 +24,16 @@ export function condenseCurrency(
 
   const localeInfo = formats[locale];
   const currencyFormatsForLocale = localeInfo.number.patterns.currency;
-
   const symbolsForLocale = symbols[localeInfo.number.symbols];
 
-  const normalizedCurrencyCode = currencyCode.toUpperCase();
-  const currencySymbol =
-    localeInfo.number.currencies[normalizedCurrencyCode] ||
-    normalizedCurrencyCode;
+  const formatting = new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: currencyCode.toUpperCase(),
+  });
+
+  const currencySymbol = (<any>formatting)
+    .formatToParts(value)
+    .find(formatting => formatting.type === 'currency').value;
 
   const resolvedNumber = `${number}${abbreviation}`;
 
