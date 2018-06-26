@@ -1,6 +1,6 @@
 containers:
   default:
-    docker: circleci/ruby:2.5.1-node-browsers
+    docker: circleci/openjdk:10-node-browsers
 
 steps:
 - label: 'Tests 👓'

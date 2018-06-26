@@ -29,11 +29,11 @@ describe('condenseCurrency()', () => {
     expect(condenseCurrency(-15000, 'ja', 'CAD')).toBe('-CA$1万');
   });
 
-  it.skip('uses Intl formatting when the locale is not supported', () => {
+  it('uses Intl formatting when the locale is not supported', () => {
     expect(condenseCurrency(150000, 'IN', 'USD')).toBe('US$150.000');
   });
 
-  it.skip('applies precision to Intl formatting when the locale is not supported', () => {
+  it('applies precision to Intl formatting when the locale is not supported', () => {
     expect(condenseCurrency(150000, 'IN', 'USD', 2)).toBe('US$150.000,00');
   });
 });
