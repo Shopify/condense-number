@@ -1,4 +1,4 @@
-# condense-number:
+# condense-number
 
 Locale-aware number and currency condensing.
 
