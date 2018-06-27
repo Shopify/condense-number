@@ -33,6 +33,10 @@ describe('condenseCurrency()', () => {
     expect(condenseCurrency(150000, 'IN', 'USD')).toBe('US$150.000');
   });
 
+  it('falls back to the capitalized currency code when a currency symbol is not found', () => {
+    expect(condenseCurrency(150000, 'en', 'abc')).toBe('ABC150K');
+  });
+
   it.skip('applies precision to Intl formatting when the locale is not supported', () => {
     expect(condenseCurrency(150000, 'IN', 'USD', 2)).toBe('US$150.000,00');
   });

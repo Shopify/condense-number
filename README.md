@@ -32,6 +32,10 @@ Optionally, provide a fourth parameter, which is a number and overrides the defa
 
 `condenseCurrency(1500, 'en', 'gbp', 1)` = `'£1.5K'`
 
+When a currency symbol is not found, the capitalized currency code will be used instead. For example:
+
+`condenseCurrency(150000, 'en', 'abc')` = `'ABC150K'`
+
 ### How it works
 
 If you're curious, have a look at the [CLDR data](https://github.com/unicode-cldr/cldr-numbers-modern) used under the hood. The logic we apply to the JSON is informed by documentation ([here](http://www.unicode.org/reports/tr35/tr35-29.html#Number_Format_Patterns) and [here](http://unicode.org/reports/tr35/tr35-numbers.html)) from Unicode.
