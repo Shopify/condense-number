@@ -1,10 +1,6 @@
 language: node_js
-install:
+before_install:
   - "nvm install 8.10.0 --with-intl=system-icu"
-  - "echo Available versions:"
-  - "nvm ls"
-  - "echo Curren version:"
-  - "node --version"
 node_js:
   - "8.10.0"
 cache:
