@@ -1,5 +1,5 @@
 {
-  "name": "condense-number",
+  "name": "@shopify/condense-number",
   "version": "0.1.0",
   "repository": "git@github.com:Shopify/condense-number.git",
   "author": "Shopify <dev@shopify.com>",
@@ -7,7 +7,11 @@
   "scripts": {
     "build": "microbundle",
     "format": "prettier --write src/**/*",
-    "test": "env NODE_ICU_DATA=$(node-full-icu-path) jest"
+    "test": "env NODE_ICU_DATA=$(node-full-icu-path) jest",
+    "prepublish": "in-publish && yarn build || :"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",
@@ -15,6 +19,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-shopify": "^22.1.0",
     "full-icu": "^1.2.1",
+    "in-publish": "^2.0.0",
     "jest": "^23.1.0",
     "microbundle": "^0.4.4",
     "prettier": "^1.13.4",
