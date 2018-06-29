@@ -4,6 +4,10 @@
   "repository": "git@github.com:Shopify/condense-number.git",
   "author": "Shopify <dev@shopify.com>",
   "license": "MIT",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.m.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "microbundle",
     "format": "prettier --write src/**/*",
