@@ -7,18 +7,19 @@
   "scripts": {
     "build": "microbundle",
     "format": "prettier --write src/**/*",
-    "test": "jest"
+    "test": "env NODE_ICU_DATA=$(node-full-icu-path) jest"
   },
   "devDependencies": {
     "@types/jest": "^23.0.0",
     "eslint": "^4.19.1",
+    "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-shopify": "^22.1.0",
+    "full-icu": "^1.2.1",
     "jest": "^23.1.0",
     "microbundle": "^0.4.4",
     "prettier": "^1.13.4",
     "ts-jest": "^22.4.6",
-    "typescript": "^2.9.1",
-    "eslint-plugin-prettier": "^2.6.0"
+    "typescript": "^2.9.1"
   },
   "jest": {
     "transform": {
