@@ -17,8 +17,16 @@ describe('condenseNumber()', () => {
     expect(condenseNumber(1500000, 'de')).toBe(`1 Mio'.'`);
   });
 
-  it('condenses numbers to the provided precision', () => {
+  it('rounds down', () => {
+    expect(condenseNumber(1900000, 'es')).toBe('1 M');
+  });
+
+  it('includes the provided precision when it is significant', () => {
     expect(condenseNumber(1500000, 'es', 1)).toBe('1,5 M');
+  });
+
+  it('does not include the provided precision when it is insignificant', () => {
+    expect(condenseNumber(1000000, 'es', 1)).toBe('1 M');
   });
 
   it('handles negative numbers properly', () => {
@@ -29,7 +37,7 @@ describe('condenseNumber()', () => {
     expect(condenseNumber(-150000, 'IN')).toBe('-150.000');
   });
 
-  it('applies precision to Intl formatting when the locale is not supported', () => {
-    expect(condenseNumber(-150000, 'IN', 2)).toBe('-150.000,00');
+  it('does not apply precision to Intl formatting when the locale is not supported', () => {
+    expect(condenseNumber(-150000, 'IN', 2)).toBe('-150.000');
   });
 });
