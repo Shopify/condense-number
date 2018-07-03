@@ -11,8 +11,6 @@ export function condenseCurrency(
     return new Intl.NumberFormat(locale, {
       style: 'currency',
       currency: currencyCode,
-      minimumFractionDigits: precision,
-      maximumFractionDigits: precision,
     }).format(value);
   }
 

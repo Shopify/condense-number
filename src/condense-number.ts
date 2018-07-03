@@ -7,10 +7,7 @@ export function condenseNumber(
   precision: number = 0,
 ) {
   if (!isSupportedLocale(locale)) {
-    return new Intl.NumberFormat(locale, {
-      minimumFractionDigits: precision,
-      maximumFractionDigits: precision,
-    }).format(value);
+    return new Intl.NumberFormat(locale).format(value);
   }
 
   const {sign, number, abbreviation} = condenseNumberToParts(
