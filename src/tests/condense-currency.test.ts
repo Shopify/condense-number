@@ -22,7 +22,25 @@ describe('condenseCurrency()', () => {
   });
 
   it('condenses numbers to the provided precision', () => {
-    expect(condenseCurrency(1500, 'en', 'gbp', 1)).toBe('£1.5K');
+    expect(condenseCurrency(1500, 'en', 'gbp', {maxPrecision: 1})).toBe(
+      '£1.5K',
+    );
+  });
+
+  it('rounds down by default', () => {
+    expect(condenseCurrency(1500, 'en', 'gbp')).toBe('£1K');
+  });
+
+  it('rounds up if specified', () => {
+    expect(condenseCurrency(1500, 'en', 'gbp', {roundingRule: 'up'})).toBe(
+      '£2K',
+    );
+  });
+
+  it('rounds automatically if specified', () => {
+    expect(condenseCurrency(1500, 'en', 'gbp', {roundingRule: 'up'})).toBe(
+      '£2K',
+    );
   });
 
   it('handles negative numbers properly', () => {
@@ -38,6 +56,8 @@ describe('condenseCurrency()', () => {
   });
 
   it('does not apply precision to Intl formatting when the locale is not supported', () => {
-    expect(condenseCurrency(150000, 'en-CA', 'USD', 10)).toBe('US$150,000.00');
+    expect(condenseCurrency(150000, 'en-CA', 'USD', {maxPrecision: 1})).toBe(
+      'US$150,000.00',
+    );
   });
 });
