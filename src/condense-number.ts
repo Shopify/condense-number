@@ -1,11 +1,18 @@
 import {formats, symbols, isSupportedLocale} from './formats';
-import {condenseNumberToParts} from './condense-number-to-parts';
+import {condenseNumberToParts, RoundingRule} from './condense-number-to-parts';
+
+interface Options {
+  maxPrecision: number;
+  roundingRule: RoundingRule;
+}
 
 export function condenseNumber(
   value: number,
   locale: string,
-  precision: number = 0,
+  options: Partial<Options> = {},
 ) {
+  const {maxPrecision = 0, roundingRule = 'down'} = options;
+
   if (!isSupportedLocale(locale)) {
     return new Intl.NumberFormat(locale).format(value);
   }
@@ -13,7 +20,8 @@ export function condenseNumber(
   const {sign, number, abbreviation} = condenseNumberToParts(
     value,
     locale,
-    precision,
+    maxPrecision,
+    roundingRule,
   );
 
   const localeInfo = formats[locale];

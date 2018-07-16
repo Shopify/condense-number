@@ -17,9 +17,9 @@ Example:
 `condenseNumber(1000, 'en')`
 = `'1K'`
 
-Optionally, provide a third parameter, which is a number and overrides the default decimal precision of 0.
+Optionally, specify maximum precision within an options object to override the default decimal precision of 0. Precision will not be applied if the decimal value is 0.
 
-`condenseNumber(1500, 'en', 1)`
+`condenseNumber(1500, 'en', {maxPrecision: 1})`
 = `'1.5K'`
 
 ### condenseCurrency
@@ -28,13 +28,35 @@ Provide a number, locale and currency code, get the value with the currency prov
 
 `condenseCurrency(15000, 'en', 'usd')` = `'$15K'`;
 
-Optionally, provide a fourth parameter, which is a number and overrides the default decimal precision of 0.
+Optionally, specify maximum precision within an options object to override the default decimal precision of 0. Precision will not be applied if the decimal value is 0.
 
-`condenseCurrency(1500, 'en', 'gbp', 1)` = `'£1.5K'`
+`condenseCurrency(1500, 'en', 'gbp', {maxPrecision: 1})` = `'£1.5K'`
 
 When a currency symbol is not found, the capitalized currency code will be used instead. For example:
 
 `condenseCurrency(150000, 'en', 'abc')` = `'ABC150K'`
+
+### Rounding
+
+By default, condensed numbers round down. For example:
+
+`condenseNumber(1500, 'en')`
+= `'1K'`
+
+However, if you want to round to the closest integer or always round up to the next integer, you can specify that in the options object, by using 'auto' or 'up':
+
+`condenseNumber(1200, 'en', {roundingRule: 'auto'})`
+= `'1K'`
+
+`condenseCurrency(1100, 'en', 'gbp', {roundingRule: 'up'})`
+
+= `'£2K'`
+
+Rounding can be used with maxPrecision.
+
+`condenseNumber(1089, 'en', {roundingRule: 'auto', maxPrecision: 1});`
+
+= `1.1K`
 
 ### How it works
 
