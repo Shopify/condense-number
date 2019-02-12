@@ -41,13 +41,16 @@ enum SupportedLocale {
   Spanish = 'es',
   Danish = 'da',
   German = 'de',
+  Finnish = 'fi',
   French = 'fr',
   Hindi = 'hi',
   Italian = 'it',
   Japanese = 'ja',
   Dutch = 'nl',
+  Norwegian = 'nb-NO',
   Portugese = 'pt-BR',
   Russian = 'ru',
+  Swedish = 'sv',
   ChineseSimplified = 'zh-CN',
   ChineseTraditional = 'zh-TW',
 }
@@ -253,6 +256,44 @@ const formats: {[key in SupportedLocale]: Format} = {
       '1000000000000-count-other': '0 B',
       '10000000000000-count-other': '00 B',
       '100000000000000-count-other': '000 B',
+    },
+  },
+  fi: {
+    number: {
+      patterns: {
+        decimal: {
+          positivePattern: '{number}',
+          negativePattern: '{minusSign}{number}',
+        },
+        currency: {
+          positivePattern: '{number} {currency}',
+          negativePattern: '{minusSign}{number} {currency}',
+        },
+      },
+      symbols: 'latn',
+      currencies: {
+        EUR: '€',
+        FIM: 'mk',
+        GBP: '£',
+        JPY: '¥',
+        USD: '$',
+        XAF: 'FCFA',
+        XOF: 'CFA',
+      },
+    },
+    condensePatterns: {
+      '1000-count-other': "0 t'.'",
+      '10000-count-other': "00 t'.'",
+      '100000-count-other': "000 t'.'",
+      '1000000-count-other': "0 milj'.'",
+      '10000000-count-other': "00 milj'.'",
+      '100000000-count-other': "000 milj'.'",
+      '1000000000-count-other': "0 mrd'.'",
+      '10000000000-count-other': "00 mrd'.'",
+      '100000000000-count-other': "000 mrd'.'",
+      '1000000000000-count-other': "0 bilj'.'",
+      '10000000000000-count-other': "00 bilj'.'",
+      '100000000000000-count-other': "000 bilj'.'",
     },
   },
   fr: {
@@ -530,6 +571,41 @@ const formats: {[key in SupportedLocale]: Format} = {
       '100000000000000-count-other': '000 bln',
     },
   },
+  'nb-NO': {
+    number: {
+      patterns: {
+        decimal: {
+          positivePattern: '{number}',
+          negativePattern: '{minusSign}{number}',
+        },
+        currency: {
+          positivePattern: '{currency} {number}',
+          negativePattern: '{minusSign}{currency} {number}',
+        },
+      },
+      symbols: 'latn',
+      currencies: {
+        EUR: '€',
+        GBP: '£',
+        NOK: 'kr',
+        XOF: 'CFA',
+      },
+    },
+    condensePatterns: {
+      '1000-count-other': '0k',
+      '10000-count-other': '00k',
+      '100000-count-other': '000k',
+      '1000000-count-other': "0 mill'.'",
+      '10000000-count-other': "00 mill'.'",
+      '100000000-count-other': "000 mill'.'",
+      '1000000000-count-other': "0 mrd'.'",
+      '10000000000-count-other': "00 mrd'.'",
+      '100000000000-count-other': "000 mrd'.'",
+      '1000000000000-count-other': "0 bill'.'",
+      '10000000000000-count-other': "00 bill'.'",
+      '100000000000000-count-other': "000 bill'.'",
+    },
+  },
   'pt-BR': {
     number: {
       patterns: {
@@ -643,6 +719,59 @@ const formats: {[key in SupportedLocale]: Format} = {
       '100000000000000-count-other': '000 трлн',
     },
   },
+  sv: {
+    number: {
+      patterns: {
+        decimal: {
+          positivePattern: '{number}',
+          negativePattern: '{minusSign}{number}',
+        },
+        currency: {
+          positivePattern: '{number} {currency}',
+          negativePattern: '{minusSign}{number} {currency}',
+        },
+      },
+      symbols: 'latn',
+      currencies: {
+        BBD: 'Bds$',
+        BMD: 'BM$',
+        BRL: 'BR$',
+        BSD: 'BS$',
+        BZD: 'BZ$',
+        CAD: 'CA$',
+        DKK: 'Dkr',
+        DOP: 'RD$',
+        EEK: 'Ekr',
+        EGP: 'EG£',
+        EUR: '€',
+        ILS: '₪',
+        ISK: 'Ikr',
+        JMD: 'JM$',
+        MXN: 'MX$',
+        NOK: 'Nkr',
+        SEK: 'kr',
+        USD: 'US$',
+        XAF: 'FCFA',
+        XCD: 'EC$',
+        XOF: 'CFA',
+        XPF: 'CFPF',
+      },
+    },
+    condensePatterns: {
+      '1000-count-other': '0 tn',
+      '10000-count-other': '00 tn',
+      '100000-count-other': '000 tn',
+      '1000000-count-other': '0 mn',
+      '10000000-count-other': '00 mn',
+      '100000000-count-other': '000 mn',
+      '1000000000-count-other': '0 md',
+      '10000000000-count-other': '00 md',
+      '100000000000-count-other': '000 md',
+      '1000000000000-count-other': '0 bn',
+      '10000000000000-count-other': '00 bn',
+      '100000000000000-count-other': '000 bn',
+    },
+  },
   'zh-CN': {
     number: {
       patterns: {
@@ -674,10 +803,6 @@ const formats: {[key in SupportedLocale]: Format} = {
         TWD: 'NT$',
         USD: 'US$',
         VND: '₫',
-        XAF: 'FCFA',
-        XCD: 'EC$',
-        XOF: 'CFA',
-        XPF: 'CFPF',
       },
     },
     condensePatterns: {
