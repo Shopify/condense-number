@@ -46,11 +46,15 @@ enum SupportedLocale {
   Hindi = 'hi',
   Italian = 'it',
   Japanese = 'ja',
+  Malay = 'ms',
   Dutch = 'nl',
   Norwegian = 'nb-NO',
   Portugese = 'pt-BR',
   Russian = 'ru',
+<<<<<<< HEAD
   Swedish = 'sv',
+=======
+>>>>>>> Conflicts
   ChineseSimplified = 'zh-CN',
   ChineseTraditional = 'zh-TW',
 }
@@ -518,6 +522,55 @@ const formats: {[key in SupportedLocale]: Format} = {
       '100000000000000-count-other': '000兆',
     },
   },
+  ms: {
+    number: {
+      patterns: {
+        decimal: {
+          positivePattern: '{number}',
+          negativePattern: '{minusSign}{number}',
+        },
+        currency: {
+          positivePattern: '{currency}{number}',
+          negativePattern: '{minusSign}{currency}{number}',
+        },
+      },
+      symbols: 'latn',
+      currencies: {
+        AUD: 'A$',
+        BRL: 'R$',
+        CNY: 'CN¥',
+        EUR: '€',
+        GBP: '£',
+        HKD: 'HK$',
+        ILS: '₪',
+        INR: '₹',
+        JPY: 'JP¥',
+        KRW: '₩',
+        MYR: 'RM',
+        NZD: 'NZ$',
+        TWD: 'NT$',
+        VND: '₫',
+        XAF: 'FCFA',
+        XCD: 'EC$',
+        XOF: 'CFA',
+        XPF: 'CFPF',
+      },
+    },
+    condensePatterns: {
+      '1000-count-other': '0K',
+      '10000-count-other': '00K',
+      '100000-count-other': '000K',
+      '1000000-count-other': '0J',
+      '10000000-count-other': '00J',
+      '100000000-count-other': '000J',
+      '1000000000-count-other': '0B',
+      '10000000000-count-other': '00B',
+      '100000000000-count-other': '000B',
+      '1000000000000-count-other': '0T',
+      '10000000000000-count-other': '00T',
+      '100000000000000-count-other': '000T',
+    },
+  },
   nl: {
     number: {
       patterns: {
@@ -719,6 +772,7 @@ const formats: {[key in SupportedLocale]: Format} = {
       '100000000000000-count-other': '000 трлн',
     },
   },
+<<<<<<< HEAD
   sv: {
     number: {
       patterns: {
@@ -772,6 +826,8 @@ const formats: {[key in SupportedLocale]: Format} = {
       '100000000000000-count-other': '000 bn',
     },
   },
+=======
+>>>>>>> Conflicts
   'zh-CN': {
     number: {
       patterns: {
@@ -803,6 +859,10 @@ const formats: {[key in SupportedLocale]: Format} = {
         TWD: 'NT$',
         USD: 'US$',
         VND: '₫',
+        XAF: 'FCFA',
+        XCD: 'EC$',
+        XOF: 'CFA',
+        XPF: 'CFPF',
       },
     },
     condensePatterns: {
