@@ -51,10 +51,7 @@ enum SupportedLocale {
   Norwegian = 'nb-NO',
   Portugese = 'pt-BR',
   Russian = 'ru',
-<<<<<<< HEAD
   Swedish = 'sv',
-=======
->>>>>>> Conflicts
   ChineseSimplified = 'zh-CN',
   ChineseTraditional = 'zh-TW',
 }
@@ -772,7 +769,6 @@ const formats: {[key in SupportedLocale]: Format} = {
       '100000000000000-count-other': '000 трлн',
     },
   },
-<<<<<<< HEAD
   sv: {
     number: {
       patterns: {
@@ -826,8 +822,6 @@ const formats: {[key in SupportedLocale]: Format} = {
       '100000000000000-count-other': '000 bn',
     },
   },
-=======
->>>>>>> Conflicts
   'zh-CN': {
     number: {
       patterns: {
