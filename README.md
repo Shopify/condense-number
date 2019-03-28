@@ -25,7 +25,7 @@ The following locales are now available in `condense-number`:
 - Russian (ru)
 - Swedish (sv)
 - Chinese (Simplified) (zh-CN)
-- Chinese (Tradidtional) (zh-TW)
+- Chinese (Traditional) (zh-TW)
 
 ### How to use
 
