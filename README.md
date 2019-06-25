@@ -16,6 +16,7 @@ The following locales are now available in `condense-number`:
 - Hindi (hi)
 - Italian (it)
 - Japanese (ja)
+- Korean (ko)
 - Malay (ms)
 - Norwegian (nb-NO)
 - Dutch (nl)
@@ -24,6 +25,7 @@ The following locales are now available in `condense-number`:
 - Romanian (ro)
 - Russian (ru)
 - Swedish (sv)
+- Thai (th)
 - Chinese (Simplified) (zh-CN)
 - Chinese (Traditional) (zh-TW)
 
