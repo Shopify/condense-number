@@ -1,9 +1,4 @@
-import {
-  formats,
-  symbols,
-  isSupportedLocale,
-  getSafeLocaleFormat,
-} from './formats';
+import {formats, symbols, getSafeLocaleFormat} from './formats';
 import {condenseNumberToParts, RoundingRule} from './condense-number-to-parts';
 
 interface Options {
