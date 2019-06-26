@@ -1,4 +1,9 @@
-import {formats, symbols, isSupportedLocale} from './formats';
+import {
+  formats,
+  symbols,
+  isSupportedLocale,
+  getSafeLocaleFormat,
+} from './formats';
 import {condenseNumberToParts, RoundingRule} from './condense-number-to-parts';
 
 interface Options {
@@ -12,23 +17,20 @@ export function condenseNumber(
   options: Partial<Options> = {},
 ) {
   const {maxPrecision = 0, roundingRule = 'down'} = options;
+  const safeLocale = getSafeLocaleFormat(locale);
 
-  if (!isSupportedLocale(locale)) {
-    if (isSupportedLocale(locale.split('-')[0])) {
-      locale = locale.split('-')[0];
-    } else {
-      return new Intl.NumberFormat(locale).format(value);
-    }
+  if (safeLocale == null) {
+    return new Intl.NumberFormat(locale).format(value);
   }
 
   const {sign, number, abbreviation} = condenseNumberToParts(
     value,
-    locale,
+    safeLocale,
     maxPrecision,
     roundingRule,
   );
 
-  const localeInfo = formats[locale];
+  const localeInfo = formats[safeLocale];
   const numberFormatsForLocale = localeInfo.number.patterns.decimal;
 
   const symbolsForLocale = symbols[localeInfo.number.symbols];

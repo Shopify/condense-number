@@ -65,6 +65,14 @@ export function isSupportedLocale(locale: string): locale is SupportedLocale {
   return Object.values(SupportedLocale).indexOf(locale) !== -1;
 }
 
+export function getSafeLocaleFormat(locale) {
+  const [country] = locale.split('-');
+
+  if (!isSupportedLocale(country)) return null;
+
+  return country;
+}
+
 const formats: {[key in SupportedLocale]: Format} = {
   da: {
     number: {
