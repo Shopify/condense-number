@@ -14,7 +14,11 @@ export function condenseNumber(
   const {maxPrecision = 0, roundingRule = 'down'} = options;
 
   if (!isSupportedLocale(locale)) {
-    return new Intl.NumberFormat(locale).format(value);
+    if (isSupportedLocale(locale.split('-')[0])) {
+      locale = locale.split('-')[0];
+    } else {
+      return new Intl.NumberFormat(locale).format(value);
+    }
   }
 
   const {sign, number, abbreviation} = condenseNumberToParts(
