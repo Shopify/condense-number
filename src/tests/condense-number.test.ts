@@ -52,4 +52,8 @@ describe('condenseNumber()', () => {
   it('does not apply precision to Intl formatting when the locale is not supported', () => {
     expect(condenseNumber(-150000, 'IN', {maxPrecision: 2})).toBe('-150.000');
   });
+
+  it('condenses numbers for local when region is specified but not handled', () => {
+    expect(condenseNumber(10000, 'en-ZZZ')).toBe('10K');
+  });
 });
