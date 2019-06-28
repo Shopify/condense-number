@@ -66,15 +66,17 @@ export function isSupportedLocale(locale: string): locale is SupportedLocale {
 }
 
 export function getSafeLocaleFormat(locale) {
-  if (!isSupportedLocale(locale)) {
-    const [countryCode] = locale.split('-');
-    if (isSupportedLocale(countryCode)) {
-      return countryCode;
-    }
-    return null;
+  if (isSupportedLocale(locale)) {
+    return locale;
   }
 
-  return locale;
+  const [countryCode] = locale.split('-');
+
+  if (isSupportedLocale(countryCode)) {
+    return countryCode;
+  }
+
+  return null;
 }
 
 const formats: {[key in SupportedLocale]: Format} = {
