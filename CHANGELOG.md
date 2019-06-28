@@ -2,6 +2,10 @@
 
 All notable consumer-facing changes are documented in this file.
 
+### 0.5.1
+
+Code style changes only - no consumer-facing changes.
+
 ### 0.5.0
 
 #### Changes
