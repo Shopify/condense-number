@@ -2,6 +2,12 @@
 
 All notable consumer-facing changes are documented in this file.
 
+### 0.6.0
+
+#### Enhancements
+
+- Adds support for Turkish
+
 ### 0.5.1
 
 Code style changes only - no consumer-facing changes.
