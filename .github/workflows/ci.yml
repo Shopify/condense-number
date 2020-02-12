@@ -8,16 +8,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Setup Node
+    - name: 🏗 Setup Node
       uses: actions/setup-node@v1.1.0
       with:
         version: 8.10.0
         
-    - name: Get yarn cache directory
+    - name: 📂 Get yarn cache directory
       id: yarn-cache-dir
       run: echo "::set-output name=dir::$(yarn cache dir)"
     
-    - name: Cache node modules
+    - name: 📥 Cache node modules
       uses: actions/cache@v1
       env:
         cache-name: cache-node-modules
@@ -29,8 +29,8 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}-
        
-    - name: Install dependencies
+    - name: 📦 Install dependencies
       run: yarn
 
-    - name: Run tests
+    - name: ✨ Run tests
       run: yarn test
