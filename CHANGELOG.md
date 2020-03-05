@@ -2,6 +2,12 @@
 
 All notable consumer-facing changes are documented in this file.
 
+### 0.7.0
+
+#### Changes
+
+- `condenseCurrency` will now fall back to the "best match" locale if an unsupported region is provided; e.g. `en-ZZ` would fall back to `en`.
+
 ### 0.6.0
 
 #### Enhancements
