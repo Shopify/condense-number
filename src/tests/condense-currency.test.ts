@@ -55,9 +55,13 @@ describe('condenseCurrency()', () => {
     expect(condenseCurrency(150000, 'en', 'abc')).toBe('ABC150K');
   });
 
+  it('supports locales with a region locale code', () => {
+    expect(condenseCurrency(150000, 'en-CA', 'CAD')).toBe('CA$150K');
+  });
+
   it('does not apply precision to Intl formatting when the locale is not supported', () => {
-    expect(condenseCurrency(150000, 'en-CA', 'USD', {maxPrecision: 1})).toBe(
-      'US$150,000.00',
+    expect(condenseCurrency(150000, 'zzz', 'CAD', {maxPrecision: 1})).toBe(
+      'CA$150,000.00',
     );
   });
 });

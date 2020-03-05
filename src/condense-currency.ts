@@ -1,4 +1,4 @@
-import {formats, symbols, isSupportedLocale} from './formats';
+import {formats, symbols, getSafeLocaleFormat} from './formats';
 import {condenseNumberToParts, RoundingRule} from './condense-number-to-parts';
 
 interface Options {
@@ -13,8 +13,9 @@ export function condenseCurrency(
   options: Partial<Options> = {},
 ) {
   const {maxPrecision = 0, roundingRule = 'down'} = options;
+  const safeLocale = getSafeLocaleFormat(locale);
 
-  if (!isSupportedLocale(locale)) {
+  if (safeLocale == null) {
     return new Intl.NumberFormat(locale, {
       style: 'currency',
       currency: currencyCode,
@@ -23,12 +24,12 @@ export function condenseCurrency(
 
   const {sign, number, abbreviation} = condenseNumberToParts(
     value,
-    locale,
+    safeLocale,
     maxPrecision,
     roundingRule,
   );
 
-  const localeInfo = formats[locale];
+  const localeInfo = formats[safeLocale];
   const currencyFormatsForLocale = localeInfo.number.patterns.currency;
 
   const symbolsForLocale = symbols[localeInfo.number.symbols];
