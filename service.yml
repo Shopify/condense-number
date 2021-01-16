@@ -1,0 +1,10 @@
+org_line: Commerce Intelligence Core
+owners:
+  - Shopify/store-insights-web
+classification: library
+security:
+  data_management:
+    contains_pii: false
+slack_channels:
+  - store-insights-web
+  - commerce-intel-insights
