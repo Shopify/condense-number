@@ -63,7 +63,7 @@ enum SupportedLocale {
 }
 
 export function isSupportedLocale(locale: string): locale is SupportedLocale {
-  return Object.values(SupportedLocale).indexOf(locale) !== -1;
+  return Object.values<string>(SupportedLocale).includes(locale);
 }
 
 export function getSafeLocaleFormat(locale) {
