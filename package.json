@@ -24,7 +24,7 @@
     "eslint-plugin-shopify": "^22.1.0",
     "full-icu": "^1.2.1",
     "in-publish": "^2.0.0",
-    "jest": "^23.1.0",
+    "jest": "^26.6.3",
     "microbundle": "^0.4.4",
     "prettier": "^1.13.4",
     "ts-jest": "^22.4.6",
