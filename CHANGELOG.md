@@ -2,6 +2,12 @@
 
 All notable consumer-facing changes are documented in this file.
 
+### 0.7.1
+
+#### Changes
+
+- Dependency upgrades
+
 ### 0.7.0
 
 #### Changes
