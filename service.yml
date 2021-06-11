@@ -3,5 +3,5 @@ security:
   data_management:
     contains_pii: false
 slack_channels:
-- store-insights-web
+- analytical-standards-eng
 - commerce-intel-insights
