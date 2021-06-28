@@ -3,5 +3,5 @@ security:
   data_management:
     contains_pii: false
 slack_channels:
-- analytical-standards-eng
+- ci-analytical-standards-rnd
 - commerce-intel-insights
