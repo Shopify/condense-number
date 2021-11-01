@@ -32,7 +32,15 @@ The following locales are now available in `condense-number`:
 - Chinese (Simplified) (zh-CN)
 - Chinese (Traditional) (zh-TW)
 
-### How to use
+## How to use
+
+Install `condense-number` in your project:
+
+```text
+yarn add condense-number
+```
+
+Both `condenseNumber` and `condenseCurrency` are exported as named exports and can be imported individually.
 
 ### condenseNumber
 
@@ -84,6 +92,17 @@ Rounding can be used with maxPrecision.
 
 = `1.1K`
 
-### How it works
+## How it works
 
 If you're curious, have a look at the [CLDR data](https://github.com/unicode-cldr/cldr-numbers-modern) used under the hood. The logic we apply to the JSON is informed by documentation ([here](http://www.unicode.org/reports/tr35/tr35-29.html#Number_Format_Patterns) and [here](http://unicode.org/reports/tr35/tr35-numbers.html)) from Unicode. We use [Intl.js](https://github.com/andyearnshaw/Intl.js), which also relies on CLDR data, to inform our currency codes and number patterns.
+
+## Development instructions
+
+1. Install the specified Node version: `nvm install`
+1. Install dependencies: `npx yarn install`
+
+You can now run:
+
+- Test: `npx yarn run test`
+- Code formatting: `npx yarn run format`
+- Building: `npx yarn run build`
