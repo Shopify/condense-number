@@ -2,6 +2,3 @@ classification: library
 security:
   data_management:
     contains_pii: false
-slack_channels:
-- ci-analytical-standards-rnd
-- commerce-intel-insights
