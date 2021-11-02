@@ -2,6 +2,12 @@
 
 All notable consumer-facing changes are documented in this file.
 
+### 1.0.0 [2021-11-02]
+
+- Set the version of Node to 16.13.0 used when running tests and developing on this project.
+- Add development instructions.
+- No consumer-facing changes are expected.
+
 ### 0.7.1
 
 #### Changes
