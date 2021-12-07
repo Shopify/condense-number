@@ -34,10 +34,10 @@ The following locales are now available in `condense-number`:
 
 ## How to use
 
-Install `condense-number` in your project:
+Install `@shopify/condense-number` in your project:
 
 ```text
-yarn add condense-number
+yarn add @shopify/condense-number
 ```
 
 Both `condenseNumber` and `condenseCurrency` are exported as named exports and can be imported individually.
