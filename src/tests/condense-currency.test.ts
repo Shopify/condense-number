@@ -44,7 +44,7 @@ describe('condenseCurrency()', () => {
   });
 
   it('handles negative numbers properly', () => {
-    expect(condenseCurrency(-15000, 'ja', 'CAD')).toBe('-CA$1万');
+    expect(condenseCurrency(-15000, 'ja', 'CAD')).toBe('−CA$1万');
   });
 
   it('uses Intl formatting when the locale is not supported', () => {

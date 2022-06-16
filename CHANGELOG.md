@@ -2,6 +2,12 @@
 
 All notable consumer-facing changes are documented in this file.
 
+### 1.0.1 [2022-06-16]
+
+#### Fixes
+
+- Updates the symbol used for negative values to use the minus symbol instead of a hyphen
+
 ### 1.0.0 [2021-11-02]
 
 - Set the version of Node to 16.13.0 used when running tests and developing on this project.
