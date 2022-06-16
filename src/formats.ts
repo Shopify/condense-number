@@ -10,7 +10,7 @@ const symbols: {[key: string]: LocaleSymbols} = {
   latn: {
     group: ',',
     decimal: '.',
-    minusSign: '-',
+    minusSign: '−',
   },
 };
 

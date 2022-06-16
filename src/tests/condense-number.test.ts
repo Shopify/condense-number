@@ -42,7 +42,7 @@ describe('condenseNumber()', () => {
   });
 
   it('handles negative numbers properly', () => {
-    expect(condenseNumber(-150000, 'ja')).toBe('-15万');
+    expect(condenseNumber(-150000, 'ja')).toBe('−15万');
   });
 
   it('uses Intl formatting when the locale is not supported', () => {

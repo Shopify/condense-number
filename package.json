@@ -1,6 +1,6 @@
 {
   "name": "@shopify/condense-number",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "git@github.com:Shopify/condense-number.git",
   "author": "Shopify <dev@shopify.com>",
   "license": "MIT",
