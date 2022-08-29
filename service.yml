@@ -1,4 +1,3 @@
-classification: library
 security:
   data_management:
     contains_pii: false
