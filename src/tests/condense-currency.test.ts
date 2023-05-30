@@ -64,4 +64,18 @@ describe('condenseCurrency()', () => {
       'CA$150,000.00',
     );
   });
+
+  describe('options.addLocaleToCurrency', () => {
+    it('applies locale to currency when true', () => {
+      expect(condenseCurrency(10000, 'en', 'CAD')).toBe('CA$10K');
+    });
+
+    it.only('does not apply locale to currency when false', () => {
+      const options = {
+        addLocaleToCurrency: false,
+      };
+
+      expect(condenseCurrency(10000, 'en', 'CAD', options)).toBe('$10K');
+    });
+  });
 });

@@ -1,9 +1,11 @@
 import {formats, symbols, getSafeLocaleFormat} from './formats';
 import {condenseNumberToParts, RoundingRule} from './condense-number-to-parts';
+import {removeLocaleFromCurrency} from './remove-locale-from-currency';
 
 interface Options {
   maxPrecision: number;
   roundingRule: RoundingRule;
+  addLocaleToCurrency: boolean;
 }
 
 export function condenseCurrency(
@@ -12,7 +14,11 @@ export function condenseCurrency(
   currencyCode: string,
   options: Partial<Options> = {},
 ) {
-  const {maxPrecision = 0, roundingRule = 'down'} = options;
+  const {
+    maxPrecision = 0,
+    roundingRule = 'down',
+    addLocaleToCurrency = true,
+  } = options;
   const safeLocale = getSafeLocaleFormat(locale);
 
   if (safeLocale == null) {
@@ -39,6 +45,10 @@ export function condenseCurrency(
     localeInfo.number.currencies[normalizedCurrencyCode] ||
     normalizedCurrencyCode;
 
+  const formattedCurrencySymbol = addLocaleToCurrency
+    ? currencySymbol
+    : removeLocaleFromCurrency(currencySymbol);
+
   const resolvedNumber = `${number}${abbreviation}`;
 
   if (sign === '-') {
@@ -46,13 +56,13 @@ export function condenseCurrency(
 
     return negativePattern
       .replace('{minusSign}', symbolsForLocale.minusSign)
-      .replace('{currency}', currencySymbol)
+      .replace('{currency}', formattedCurrencySymbol)
       .replace('{number}', resolvedNumber);
   } else {
     const {positivePattern} = currencyFormatsForLocale;
 
     return positivePattern
-      .replace('{currency}', currencySymbol)
+      .replace('{currency}', formattedCurrencySymbol)
       .replace('{number}', resolvedNumber);
   }
 }

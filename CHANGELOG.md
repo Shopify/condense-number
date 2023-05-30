@@ -2,6 +2,12 @@
 
 All notable consumer-facing changes are documented in this file.
 
+### 1.1.0 [2023-05-30]
+
+#### Enhancements
+
+- Added `addLocaleToCurrency` option to a `condenseCurrency` to remove locale from currencies that don't include just a symbol.
+
 ### 1.0.1 [2022-06-16]
 
 #### Changes
