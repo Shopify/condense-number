@@ -14,7 +14,7 @@ describe('condenseNumber()', () => {
   });
 
   it('condenses numbers in locales other than English', () => {
-    expect(condenseNumber(1500000, 'de')).toBe(`1 Mio'.'`);
+    expect(condenseNumber(1500000, 'de')).toBe(`1 Mio.`);
   });
 
   it('rounds down by default', () => {
