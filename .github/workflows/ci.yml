@@ -18,7 +18,7 @@ jobs:
         run: echo "yarn_cache_dir=$(yarn cache dir)" >> "$GITHUB_ENV"
 
       - name: 📥 Cache node modules
-        uses: actions/cache@f5ce41475b483ad7581884324a6eca9f48f8dcc7 # v1.2.1
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         env:
           cache-name: cache-node-modules
         with:
